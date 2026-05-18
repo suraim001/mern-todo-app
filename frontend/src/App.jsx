@@ -80,7 +80,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from gray-50 to-gray-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-linear-to-br from gray-50 to-gray-400 flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-lg p-8">
         <h1 className="text-4xl font-bold text-grey-800 mb-8 text-center">Task Manager</h1>
 
