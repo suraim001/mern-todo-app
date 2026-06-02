@@ -3,7 +3,7 @@ services:
 
   # 1. Backend Service
   backend:
-    build: ./backend
+    image: suraim001/mern-todo-backend:latest
     container_name: mern-backend
     ports:
       - "5000:5000"
@@ -12,7 +12,7 @@ services:
 
   # 2. Frontend Service
   frontend:
-    build: ./frontend
+    image: suraim001/mern-todo-frontend:latest
     container_name: mern-frontend
     ports:
       - "3000:80"  # Maps local port 3000 to container Nginx port 80
