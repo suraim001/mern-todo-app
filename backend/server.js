@@ -1,11 +1,12 @@
 import express from "express";
 import dotenv from "dotenv";
 import todoRoutes from "./routes/todo.route.js";
-import { connectDB } from "./config/db.js";
+import { connectDB, disconnectDB } from "./config/db.js";
 import cors from "cors";
 import path from "path";
 
-dotenv.config();
+// dotenv.config(); 
+// only needed if you want to use .env file for local development. I have passed environment variables directly in docker-compose.yml for simplicity. You can uncomment this line if you want to use .env file locally.
 
 const PORT = process.env.PORT || 5500;
 
@@ -34,3 +35,5 @@ app.listen(PORT, async () => {
     console.log("Server started at http://localhost:" + PORT);
 });
 
+process.on("SIGINT", disconnectDB); //Ctrl+C
+process.on("SIGTERM", disconnectDB); //Docker stop
